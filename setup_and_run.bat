@@ -13,8 +13,8 @@ call %VENV_DIR%\Scripts\activate.bat
 
 REM Install dependencies
 echo Installing dependencies...
-python -m pip install --upgrade pip >nul
-python -m pip install -r requirements.txt >nul
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
 REM Run the app
 echo Launching the app in your browser...
