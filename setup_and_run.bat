@@ -15,7 +15,7 @@ REM Install dependencies
 echo Installing dependencies...
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python -m pip install --force-reinstall plotly
+python -m pip install --force-reinstall "plotly[express]"
 
 REM Run the app
 echo Launching the app in your browser...
