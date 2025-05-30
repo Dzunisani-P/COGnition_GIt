@@ -1,0 +1,253 @@
+/* ============ Minimalist Global Styles ============ */
+:root {
+    --primary-dark: #1a472a;       /* Dark green */
+    --primary-light: #4caf50;      /* Light green */
+    --text-dark: #212121;          /* Almost black */
+    --text-light: #757575;         /* Dark gray */
+    --bg-light: #fafafa;           /* Very light gray */
+    --white: #ffffff;
+    --border-radius: 0;            /* Sharp corners */
+    --border-color: #e0e0e0;       /* Consistent border color */
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* ============ Typography ============ */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  h1 { font-size: 2.5rem; line-height: 1.2; font-weight: 400; }
+  h2 { font-size: 2rem; line-height: 1.25; }
+  h3 { font-size: 1.75rem; line-height: 1.3; }
+  h4 { font-size: 1.5rem; line-height: 1.35; }
+  
+  .display-4 {
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.15;
+  }
+  
+  .lead {
+    font-weight: 300;
+    color: var(--text-light);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ============ Side-by-Section Styles ============ */
+  .side-by-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 992px) {
+    .side-by-section {
+      flex-direction: row;
+      gap: 4rem;
+    }
+    
+    .side-by-section > div {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    
+    .side-by-section > div:not(:last-child) {
+      border-right: 1px solid var(--border-color);
+    }
+  }
+  
+  .section-item {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .section-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  /* ============ Numbered Items ============ */
+  .numbered-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .number-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bg-light);
+    font-weight: 400;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+  
+  /* ============ Navigation ============ */
+/* ============ Navigation Bar Text Contrast Fix ============ */
+.navbar {
+    background-color: var(--primary-dark) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Lighter border for contrast */
+  }
+  
+  .navbar-brand, .nav-link {
+    color: var(--white) !important;
+    font-weight: 400; /* Slightly bolder for better readability */
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+  
+  .nav-link:hover {
+    color: var(--white) !important;
+    opacity: 0.9; /* More subtle hover effect */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+  
+  /* Active nav item styling */
+  .nav-panel.active .nav-link {
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-panel.active .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+  }
+  
+  /* Icon contrast */
+  .navbar .bi {
+    color: var(--white) !important;
+    opacity: 0.9;
+  }
+  
+  /* Mobile menu contrast */
+  .navbar-toggler {
+    border-color: rgba(255,255,255,0.3) !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  
+  /* ============ Buttons ============ */
+  .btn {
+    border-radius: var(--border-radius);
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-width: 1px;
+    transition: all 0.2s ease;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+  }
+  
+  .btn-outline-dark {
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+  }
+  
+  /* ============ Cards ============ */
+  .card {
+    background-color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 2rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  /* ============ Tables ============ */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  .table thead {
+    background-color: var(--primary-dark);
+    color: var(--white);
+  }
+  
+  .table th, .table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* ============ Spacing & Layout ============ */
+  .container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  /* ============ Borders ============ */
+  .border-bottom {
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  
+  /* ============ Responsive Adjustments ============ */
+  @media (max-width: 768px) {
+    .display-4 {
+      font-size: 2rem;
+    }
+    
+    .lead {
+      font-size: 1.1rem;
+    }
+    
+    .container-fluid {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    .section-spacing {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
